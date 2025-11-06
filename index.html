@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran Komunitas Teknologi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef3f9;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 650px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 25px;
+    }
+    fieldset {
+      border: 2px solid #3498db;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: bold;
+      color: #3498db;
+      padding: 0 10px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .radio-group,
+    .checkbox-group {
+      margin-top: 8px;
+    }
+    .radio-group label,
+    .checkbox-group label {
+      margin-right: 15px;
+      font-weight: normal;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 25px;
+    }
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    input[type="reset"] {
+      background-color: #e74c3c;
+    }
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+    input[type="reset"]:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Formulir Pendaftaran Komunitas Teknologi</h1>
+
+    <form action="submit.html" method="post" enctype="multipart/form-data">
+
+      <!-- DATA PRIBADI -->
+      <fieldset>
+        <legend>Data Pribadi</legend>
+
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda"
+               autocomplete="name" required>
+
+        <label for="email">Alamat Email:</label>
+        <input type="email" id="email" name="email" placeholder="contoh@email.com"
+               autocomplete="email" required>
+
+        <label for="password">Kata Sandi:</label>
+        <input type="password" id="password" name="password" placeholder="Minimal 8 karakter"
+               minlength="8" autocomplete="new-password" required>
+
+        <label for="usia">Usia:</label>
+        <input type="number" id="usia" name="usia" placeholder="Masukkan usia Anda"
+               min="10" max="100" required>
+
+        <label for="tanggal">Tanggal Lahir:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+
+        <label>Jenis Kelamin:</label>
+        <div class="radio-group">
+          <input type="radio" id="laki" name="gender" value="Laki-laki" required>
+          <label for="laki">Laki-laki</label>
+          <input type="radio" id="perempuan" name="gender" value="Perempuan">
+          <label for="perempuan">Perempuan</label>
+        </div>
+      </fieldset>
+
+      <!-- INFORMASI TAMBAHAN -->
+      <fieldset>
+        <legend>Informasi Tambahan</legend>
+
+        <label>Minat:</label>
+        <div class="checkbox-group">
+          <input type="checkbox" id="ai" name="minat" value="AI">
+          <label for="ai">AI</label>
+          <input type="checkbox" id="web" name="minat" value="Web">
+          <label for="web">Web</label>
+          <input type="checkbox" id="iot" name="minat" value="IoT">
+          <label for="iot">IoT</label>
+          <input type="checkbox" id="game" name="minat" value="Game">
+          <label for="game">Game</label>
+        </div>
+
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="tel" id="telepon" name="telepon" placeholder="Contoh: 081234567890"
+               pattern="[0-9]{10,13}" autocomplete="tel" required>
+
+        <label for="url">Link Portofolio:</label>
+        <input type="url" id="url" name="url" placeholder="https://contoh.com"
+               autocomplete="url">
+
+        <label for="file">Upload Foto Profil:</label>
+        <input type="file" id="file" name="file" accept="image/*" required>
+      </fieldset>
+
+      <div class="buttons">
+        <input type="reset" value="Reset">
+        <input type="submit" value="Daftar">
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
